@@ -87,7 +87,40 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.log("Financial Analysis")
-console.log("----------------------------")
+console.log("Financial Analysis");
+console.log("----------------------------");
 console.log("Total Months: " + finances.length);
+
+//looking at one line at a time of the array
+let oneLine = finances[0];
+console.log(oneLine);
+
+//isolating one date
+let date = oneLine[0];
+console.log("The first date is " + date);
+
+//isolating one profitLoss
+let profitLoss = oneLine[1];
+console.log("The first Profit/Loss is " + profitLoss);
+
+//Attempt to add all the profitLoss together
+let sum = 0
+firstProfit = profitLoss
+for (var i=0; i<finances.length; i++) {
+  oneLine = finances[i];
+  profitLoss = oneLine[1];
+  console.log("these are the profit loss amounts" + profitLoss);
+  sum += oneLine[1];
+}
+console.log("Total: $" + sum);
+ 
+
+
+
+
+//for (var i=0; i<finances.length; i++) {
+//console.log(finances[i])
+//}
+
+
 
