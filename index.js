@@ -141,7 +141,8 @@ else {
 
 console.log("The total of all the changes is " + total);
   var averageDiff = (total / (finances.length - 1));
-  console.log("Average change: " + averageDiff);
+  var averageDiff2 = averageDiff.toFixed(2)
+  console.log("Average change: " + averageDiff2);
 
  
 
