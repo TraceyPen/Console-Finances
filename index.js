@@ -103,7 +103,7 @@ console.log("The first date is " + date);
 let profitLoss = oneLine[1];
 console.log("The first Profit/Loss is " + profitLoss);
 
-//Attempt to add all the profitLoss together
+//Total profitLoss for the entire dataset
 let sum = 0
 firstProfit = profitLoss
 for (var i=0; i<finances.length; i++) {
@@ -114,6 +114,40 @@ for (var i=0; i<finances.length; i++) {
 }
 console.log("Total: $" + sum);
  
+//calculate the average change in profit and loss over the dataset
+let total = 0
+for (var i=0; i<finances.length - 1; i++) {
+  oneLine = finances[i];
+  profitLoss = oneLine[1];
+  console.log("This is the first number for comparison: " + profitLoss)
+  var secondLine = finances[i+1];
+  var secondProfitLoss = secondLine[1];
+  console.log("This is the second number for comparison: " + secondProfitLoss)
+
+  if (secondProfitLoss > profitLoss) {
+var diff = secondProfitLoss - profitLoss;
+  }
+  else if (secondProfitLoss < profitLoss) {
+  var diff = secondProfitLoss - profitLoss;
+  }
+else {
+  diff = 0;
+}
+  console.log("The difference in the numbers is " + diff);
+
+  //total of all changes
+  total += diff;
+}
+
+console.log("The total of all the changes is " + total);
+  var averageDiff = (total / (finances.length - 1));
+  console.log("Average change: " + averageDiff);
+
+ 
+
+
+//var difference = function (a, b) { return Math.abs(a - b); }
+//console.log("The difference is " + difference)
 
 
 
