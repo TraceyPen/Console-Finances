@@ -93,15 +93,16 @@ console.log("Total Months: " + finances.length);
 
 //looking at one line at a time of the array
 let oneLine = finances[0];
-console.log(oneLine);
+//console.log(oneLine);
 
 //isolating one date
 let date = oneLine[0];
-console.log("The first date is " + date);
+//console.log("The first date is " + date);
 
 //isolating one profitLoss
 let profitLoss = oneLine[1];
-console.log("The first Profit/Loss is " + profitLoss);
+//console.log("The first Profit/Loss is " + profitLoss);
+
 
 //Total profitLoss for the entire dataset
 let sum = 0
@@ -109,13 +110,16 @@ firstProfit = profitLoss
 for (var i=0; i<finances.length; i++) {
   oneLine = finances[i];
   profitLoss = oneLine[1];
-  console.log("these are the profit loss amounts" + profitLoss);
+  //console.log("these are the profit loss amounts" + profitLoss);
   sum += oneLine[1];
 }
 console.log("Total: $" + sum);
  
+
 //calculate the average change in profit and loss over the dataset
 let total = 0
+const diffArray = new Array(); //create emptyarray of changes
+
 for (var i=0; i<finances.length - 1; i++) {
   oneLine = finances[i];
   profitLoss = oneLine[1];
@@ -124,38 +128,52 @@ for (var i=0; i<finances.length - 1; i++) {
   var secondProfitLoss = secondLine[1];
   console.log("This is the second number for comparison: " + secondProfitLoss)
 
+  
   if (secondProfitLoss > profitLoss) {
-var diff = secondProfitLoss - profitLoss;
+  var diff = secondProfitLoss - profitLoss;
   }
   else if (secondProfitLoss < profitLoss) {
-  var diff = secondProfitLoss - profitLoss;
+  diff = secondProfitLoss - profitLoss;
   }
 else {
   diff = 0;
 }
+
   console.log("The difference in the numbers is " + diff);
+
+  //add to array of changes in profit or loss
+
+diffArray.push(diff);
+
+
 
   //total of all changes
   total += diff;
-}
 
+    
+}
+//END OF LOOP
+
+//Find and print average change in profit or Loss
 console.log("The total of all the changes is " + total);
   var averageDiff = (total / (finances.length - 1));
-  var averageDiff2 = averageDiff.toFixed(2)
+  var averageDiff2 = averageDiff.toFixed(2);
   console.log("Average change: " + averageDiff2);
 
- 
+  //print array allDiffs
+  console.log("here are all the differences " + diffArray);
 
+  //find greatest increase
+var greatestIncrease = Math.max.apply(null, diffArray);
+//print greatest increase
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease);
 
-//var difference = function (a, b) { return Math.abs(a - b); }
-//console.log("The difference is " + difference)
+  
+//find greatest increase
+var greatestDecrease = Math.min.apply(null, diffArray);
+//print greatest increase
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
 
-
-
-
-//for (var i=0; i<finances.length; i++) {
-//console.log(finances[i])
-//}
 
 
 
