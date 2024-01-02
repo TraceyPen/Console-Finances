@@ -123,10 +123,10 @@ const diffArray = new Array(); //create emptyarray of changes
 for (var i=0; i<finances.length - 1; i++) {
   oneLine = finances[i];
   profitLoss = oneLine[1];
-  console.log("This is the first number for comparison: " + profitLoss)
+ // console.log("This is the first number for comparison: " + profitLoss)
   var secondLine = finances[i+1];
   var secondProfitLoss = secondLine[1];
-  console.log("This is the second number for comparison: " + secondProfitLoss)
+ // console.log("This is the second number for comparison: " + secondProfitLoss)
 
   
   if (secondProfitLoss > profitLoss) {
@@ -139,7 +139,7 @@ else {
   diff = 0;
 }
 
-  console.log("The difference in the numbers is " + diff);
+ // console.log("The difference in the numbers is " + diff);
 
   //add to array of changes in profit or loss
 
@@ -155,24 +155,33 @@ diffArray.push(diff);
 //END OF LOOP
 
 //Find and print average change in profit or Loss
-console.log("The total of all the changes is " + total);
+//console.log("The total of all the changes is " + total);
   var averageDiff = (total / (finances.length - 1));
   var averageDiff2 = averageDiff.toFixed(2);
   console.log("Average change: " + averageDiff2);
 
   //print array allDiffs
-  console.log("here are all the differences " + diffArray);
+  //console.log("here are all the differences " + diffArray);
 
   //find greatest increase
 var greatestIncrease = Math.max.apply(null, diffArray);
+var maxIndex = diffArray.indexOf(greatestIncrease);
+var n = maxIndex + 1;
+//console.log(typeof n)
+ 
 //print greatest increase
-console.log("Greatest Increase in Profits/Losses: " + greatestIncrease);
+//console.log("The index of greatestIncrease is " + maxIndex);
 
+console.log("Greatest Increase in Profits/Losses: " + finances[n][0] + " ($" + greatestIncrease + ")");
   
 //find greatest increase
 var greatestDecrease = Math.min.apply(null, diffArray);
+var minIndex = diffArray.indexOf(greatestDecrease);
+var o = minIndex + 1;
+
 //print greatest increase
-console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
+console.log("Greatest Decrease in Profits/Losses: " + finances[o][0] + " ($" + greatestDecrease + ")");
+//console.log("The index of greatestDecrease is " + minIndex);
 
 
 
