@@ -3,6 +3,8 @@ Create code to analyze a companies finances.
 
 Link to deployed application: https://traceypen.github.io/Console-Finances/
 
+![image](https://github.com/TraceyPen/Console-Finances/assets/152005789/ee6f1d31-6555-44df-821d-a4fc6e1afbac)
+
 Description: This project uses JavaScript to analyse the finances of a company presented as an array of data with the fields Date and Profit/Losses.  
 
 The JavaScript calculates the number of months in the dataset;
