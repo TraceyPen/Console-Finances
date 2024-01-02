@@ -1,7 +1,7 @@
 # Console-Finances
 Create code to analyze a companies finances.
 
-Link to deployed application: 
+Link to deployed application: https://traceypen.github.io/Console-Finances/
 
 Description: This project uses JavaScript to analyse the finances of a company presented as an array of data with the fields Date and Profit/Losses.  
 
